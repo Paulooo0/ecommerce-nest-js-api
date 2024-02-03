@@ -1,0 +1,53 @@
+# Products
+
+###
+GET http://localhost:3000/products
+
+###
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "Product 1",
+  "description": "Product 1 description",
+  "image_url": "https://via.placeholder.com/300x300",
+  "price": 100
+}
+
+# _________________________________________
+# Login
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "test"
+}
+
+# _________________________________________
+# Orders
+
+###
+GET http://localhost:3000/products/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoidGVzdCIsImlhdCI6MTcwNjkxNjIwNCwiZXhwIjoxNzA2OTE2MjY0fQ.BwQb-Z6mk30pPiVF8r4HTBvyPhwj6mLX-MYu67QxhHs
+
+###
+POST http://localhost:3000/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoidGVzdCIsImlhdCI6MTcwNjkxNjIwNCwiZXhwIjoxNzA2OTE2MjY0fQ.BwQb-Z6mk30pPiVF8r4HTBvyPhwj6mLX-MYu67QxhHs
+
+{
+  "items": [
+    {
+      "product_id": "e2d20654-1e7f-45af-aa36-601afbdedd32",
+      "quantity": 2
+    },
+    {
+      "product_id": "cbd3ee80-3508-4b31-964e-409113c14859",
+      "quantity": 1
+    }
+  ],
+  "card_hash": "123"
+}
